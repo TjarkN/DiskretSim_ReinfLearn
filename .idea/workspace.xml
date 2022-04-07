@@ -44,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration name="vc_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -84,6 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1649338689434</updated>
       <workItem from="1649338691010" duration="1725000" />
+      <workItem from="1649340471212" duration="165000" />
+      <workItem from="1649340707949" duration="167000" />
     </task>
     <servers />
   </component>
@@ -112,12 +114,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="314" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649339028376">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="314" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1440@0.0.3440.1440" timestamp="1649339028376" />
+    <state x="547" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1649340623269">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state x="547" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3440.1440@0.0.3440.1440" timestamp="1649340623269" />
     <state width="1674" height="413" key="GridCell.Tab.0.bottom" timestamp="1649340460713">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
@@ -134,10 +141,10 @@
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state width="1674" height="413" key="GridCell.Tab.0.right/0.0.3440.1440@0.0.3440.1440" timestamp="1649340460713" />
-    <state x="1467" y="320" key="SettingsEditor" timestamp="1649339347486">
+    <state x="322" y="178" key="SettingsEditor" timestamp="1649340869082">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1467" y="320" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1649339347486" />
+    <state x="322" y="178" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1649340869082" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1649339387515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
