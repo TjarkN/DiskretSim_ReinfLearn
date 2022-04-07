@@ -35,6 +35,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="00f24990-5aba-4692-9549-2a0aa476fdb9" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="27TKZLVRd7LsX9EK7Nf5dqcRaDz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="vc_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -86,6 +89,9 @@
       <workItem from="1649338691010" duration="1725000" />
       <workItem from="1649340471212" duration="165000" />
       <workItem from="1649340707949" duration="167000" />
+      <workItem from="1649341166704" duration="233000" />
+      <workItem from="1649341413272" duration="178000" />
+      <workItem from="1649341597686" duration="84000" />
     </task>
     <servers />
   </component>
@@ -114,37 +120,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="314" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649339028376">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state x="314" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1440@0.0.3440.1440" timestamp="1649339028376" />
-    <state x="547" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1649340623269">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state x="547" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3440.1440@0.0.3440.1440" timestamp="1649340623269" />
-    <state width="1674" height="413" key="GridCell.Tab.0.bottom" timestamp="1649340460713">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state width="1674" height="413" key="GridCell.Tab.0.bottom/0.0.3440.1440@0.0.3440.1440" timestamp="1649340460713" />
-    <state width="1674" height="413" key="GridCell.Tab.0.center" timestamp="1649340460713">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state width="1674" height="413" key="GridCell.Tab.0.center/0.0.3440.1440@0.0.3440.1440" timestamp="1649340460713" />
-    <state width="1674" height="413" key="GridCell.Tab.0.left" timestamp="1649340460713">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state width="1674" height="413" key="GridCell.Tab.0.left/0.0.3440.1440@0.0.3440.1440" timestamp="1649340460713" />
-    <state width="1674" height="413" key="GridCell.Tab.0.right" timestamp="1649340460713">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state width="1674" height="413" key="GridCell.Tab.0.right/0.0.3440.1440@0.0.3440.1440" timestamp="1649340460713" />
-    <state x="322" y="178" key="SettingsEditor" timestamp="1649340869082">
-      <screen x="0" y="0" width="3440" height="1440" />
-    </state>
-    <state x="322" y="178" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1649340869082" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1649339387515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
