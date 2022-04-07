@@ -15,7 +15,7 @@ class Agent:
         if len(self.action_plan) == 0:
             #percept
             current_state = self.problem.get_current_state()
-            #serach
+            #search
 
 
             pr = cProfile.Profile()
