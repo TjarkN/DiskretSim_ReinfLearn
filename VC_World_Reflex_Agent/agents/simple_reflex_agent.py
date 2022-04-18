@@ -23,6 +23,11 @@ class SimpleReflexAgent(Agent):
 
     def create_q_table(self):
         q_table = np.zeros((len(self.states), (len(self.actions))))
+        q_table[0, 1] = 100
+        q_table[1, 1] = 5
+
+        print(self.actions[1])
+        print(self.states[0])
         # Put your source code here
         # Nothing to see here
         # w.g. q_table[0, 1] = 5 asserts a q_value of 5 to perform action 1 in state 0
