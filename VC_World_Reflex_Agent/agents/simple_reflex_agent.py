@@ -24,6 +24,7 @@ class SimpleReflexAgent(Agent):
     def create_q_table(self):
         q_table = np.zeros((len(self.states), (len(self.actions))))
 
+        #Hard coded q_table for a 1x2 board
         """q_table[0, 0] = 1
         q_table[1, 0] = 1
         q_table[2, 0] = 1
@@ -34,11 +35,13 @@ class SimpleReflexAgent(Agent):
         q_table[7, 2] = 1
         print(q_table)"""
 
+        #Method for nxm boards
         #Get the size of the map
         size_x = self.problem.building.size[0]
         size_y = self.problem.building.size[1]
 
         #Iterate through the states and find the best action for each state
+        #Very error-prone. Gets lost in cycles easily
         for i, value in enumerate(self.states):
 
             pos_x = value[-2]
@@ -63,6 +66,7 @@ class SimpleReflexAgent(Agent):
                 q_table [i, np.random.choice(possible_act)] =1
                 print(possible_act)
         print(q_table)
+
         #print(self.actions)
         #print(self.states)
         #print(len(self.states))
