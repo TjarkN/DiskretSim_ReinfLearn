@@ -26,19 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88324182-b256-43b6-ae4f-51fc26b7a876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Nagel_Schreckenberg/hw_tjark_nitsche_nagel_schreckenberg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/agents/agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/agents/q_learning_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/images/dirt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/images/vc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/problem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/vc_environment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/vc_training.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VC_World_RL/vc_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DiskreteSim_ReinfLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiskreteSim_ReinfLearn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VC_World_RL/hw_tjark_nitsche_q_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nagel_Schreckenberg/nagel_Schreckenberg.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nagel_Schreckenberg/nagel_Schreckenberg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VC_World_RL/agents/q_learning_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/VC_World_RL/agents/q_learning_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VC_World_RL/vc_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/VC_World_RL/vc_training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +61,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Projektmanagement/Project files" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.hw_tjark_nitsche_nagel_schreckenberg">
+  <component name="RunManager" selected="Python.vc_ui (1)">
     <configuration name="hw_tjark_nitsche_nagel_schreckenberg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiskreteSim_ReinfLearn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simple_reflex_agent" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="vc_training" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiskreteSim_ReinfLearn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,12 +114,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VC_World_Reflex_Agent/agents" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VC_World_RL" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VC_World_Reflex_Agent/agents/simple_reflex_agent.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VC_World_RL/vc_training.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="vc_ui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DiskreteSim_ReinfLearn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VC_World_RL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VC_World_RL/vc_ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,10 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.vc_ui (1)" />
+        <item itemvalue="Python.vc_training" />
         <item itemvalue="Python.hw_tjark_nitsche_nagel_schreckenberg" />
         <item itemvalue="Python.nagel_Schreckenberg" />
         <item itemvalue="Python.vc_ui" />
-        <item itemvalue="Python.simple_reflex_agent" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +211,14 @@
       <workItem from="1651475360447" duration="398000" />
       <workItem from="1651492739687" duration="8974000" />
       <workItem from="1651565716655" duration="5871000" />
-      <workItem from="1651595516483" duration="772000" />
+      <workItem from="1651595516483" duration="1396000" />
+      <workItem from="1651647734947" duration="5132000" />
+      <workItem from="1651758818960" duration="3782000" />
+      <workItem from="1651865684038" duration="1524000" />
+      <workItem from="1651944057930" duration="1195000" />
+      <workItem from="1651993955812" duration="1213000" />
+      <workItem from="1652098693447" duration="4543000" />
+      <workItem from="1652198157495" duration="8425000" />
     </task>
     <task id="LOCAL-00001" summary="Committed files">
       <created>1649341800218</created>
@@ -255,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650987700309</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Homework added">
+      <created>1651596309063</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651596309063</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,12 +315,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Committed files" />
     <MESSAGE value="Added gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added gitignore" />
+    <MESSAGE value="Homework added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui__1_.coverage" NAME="vc_ui (1) Coverage Results" MODIFIED="1652210326421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$hw_tjark_nitsche_nagel_schreckenberg.coverage" NAME="hw_tjark_nitsche_nagel_schreckenberg Coverage Results" MODIFIED="1651596273809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1650987214325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$simple_reflex_agent.coverage" NAME="simple_reflex_agent Coverage Results" MODIFIED="1649680475911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent/agents" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$nagel_Schreckenberg.coverage" NAME="nagel_Schreckenberg Coverage Results" MODIFIED="1651575631395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_training.coverage" NAME="vc_training Coverage Results" MODIFIED="1652210314852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
   </component>
 </project>
