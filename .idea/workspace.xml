@@ -25,14 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88324182-b256-43b6-ae4f-51fc26b7a876" name="Default Changelist" comment="Added gitignore">
-      <change afterPath="$PROJECT_DIR$/Torch/hw_walmart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Torch/hw_walmart_tjark_nitsche.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Torch/walmart_cleaned.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Torch/walmart_target.csv" afterDir="false" />
+    <list default="true" id="88324182-b256-43b6-ae4f-51fc26b7a876" name="Default Changelist" comment="Uploaded Torch files">
       <change beforePath="$PROJECT_DIR$/.idea/DiskreteSim_ReinfLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiskreteSim_ReinfLearn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Torch/hw_walmart_tjark_nitsche.py" beforeDir="false" afterPath="$PROJECT_DIR$/Torch/hw_walmart_tjark_nitsche.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +56,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
   <component name="RunManager" selected="Python.hw_walmart_tjark_nitsche">
     <configuration name="boston_housing_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiskreteSim_ReinfLearn" />
@@ -320,16 +319,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Homework added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui__1_.coverage" NAME="vc_ui (1) Coverage Results" MODIFIED="1652210326421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
-    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$hw_tjark_nitsche_nagel_schreckenberg.coverage" NAME="hw_tjark_nitsche_nagel_schreckenberg Coverage Results" MODIFIED="1651596273809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
-    <SUITE FILE_PATH="coverage/Github_Repo$tensor.coverage" NAME="tensor Coverage Results" MODIFIED="1652351409724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
-    <SUITE FILE_PATH="coverage/Github_Repo$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1650441132632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
-    <SUITE FILE_PATH="coverage/Github_Repo$boston_housing_base.coverage" NAME="boston_housing_base Coverage Results" MODIFIED="1652351425443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
-    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1650987214325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
-    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$hw_walmart_tjark_nitsche.coverage" NAME="hw_walmart_tjark_nitsche Coverage Results" MODIFIED="1652711128521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$simple_reflex_agent.coverage" NAME="simple_reflex_agent Coverage Results" MODIFIED="1649680475911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent/agents" />
-    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$nagel_Schreckenberg.coverage" NAME="nagel_Schreckenberg Coverage Results" MODIFIED="1651575631395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1649682899932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$hw_walmart_tjark_nitsche.coverage" NAME="hw_walmart_tjark_nitsche Coverage Results" MODIFIED="1652711128521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
+    <SUITE FILE_PATH="coverage/Github_Repo$hw_walmart_tjark_nitsche.coverage" NAME="hw_walmart_tjark_nitsche Coverage Results" MODIFIED="1652790585497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$nagel_Schreckenberg.coverage" NAME="nagel_Schreckenberg Coverage Results" MODIFIED="1650287678771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_ui__1_.coverage" NAME="vc_ui (1) Coverage Results" MODIFIED="1652210326421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
+    <SUITE FILE_PATH="coverage/Github_Repo$tensor.coverage" NAME="tensor Coverage Results" MODIFIED="1652351409724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
     <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$vc_training.coverage" NAME="vc_training Coverage Results" MODIFIED="1652210314852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
     <SUITE FILE_PATH="coverage/Github_Repo$vc_ui__1_.coverage" NAME="vc_ui (1) Coverage Results" MODIFIED="1652338822035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_RL" />
+    <SUITE FILE_PATH="coverage/Github_Repo$vc_ui.coverage" NAME="vc_ui Coverage Results" MODIFIED="1650441132632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/VC_World_Reflex_Agent" />
+    <SUITE FILE_PATH="coverage/Github_Repo$boston_housing_base.coverage" NAME="boston_housing_base Coverage Results" MODIFIED="1652351425443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Torch" />
+    <SUITE FILE_PATH="coverage/DiskreteSim_ReinfLearn$hw_tjark_nitsche_nagel_schreckenberg.coverage" NAME="hw_tjark_nitsche_nagel_schreckenberg Coverage Results" MODIFIED="1651596273809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nagel_Schreckenberg" />
   </component>
 </project>

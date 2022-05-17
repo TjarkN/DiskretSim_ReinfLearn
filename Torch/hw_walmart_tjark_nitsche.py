@@ -9,8 +9,17 @@ import pandas as pd
 class ClassificationDataSet(Dataset):
     def __init__(self, feature_file, label_file, train=True, test_split_ratio=0.3, transform=None, target_transform=None):
 
-        self.features = pd.read_csv(feature_file).to_numpy()
-        self.labels = pd.read_csv(label_file).to_numpy()
+        self.features = pd.read_csv(feature_file)
+        #print(self.labels.head())
+        self.labels = self.features['Weekly_Sales']
+        self.features.drop(['Weekly_Sales','Date'], inplace=True, axis= 1)
+        #self.labels.drop(['Weekly_Sales','Date'], inplace= True, axis = 1)
+
+        self.features = self.features.to_numpy()
+        self.labels = self.labels.to_numpy()
+
+        print(self.features)
+        print(self.labels)
 
         self.features = (self.features - np.min(self.features, axis=0)) / (
                 np.max(self.features, axis=0) - np.min(self.features, axis=0))
@@ -54,7 +63,7 @@ class ClassificationDataSet(Dataset):
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
-        #self.flatten =nn.Flatten()
+        self.flatten =nn.Flatten()
         self.linear_relu_stack = nn.Sequential(nn.Linear(in_features=13, out_features=20),nn.Sigmoid(),nn.Linear(20,1))
 
     def forward (self, x):
