@@ -18,8 +18,8 @@ class ClassificationDataSet(Dataset):
         self.features = self.features.to_numpy()
         self.labels = self.labels.to_numpy()
 
-        print(self.features)
-        print(self.labels)
+        #print(self.features)
+        #print(self.labels)
 
         self.features = (self.features - np.min(self.features, axis=0)) / (
                 np.max(self.features, axis=0) - np.min(self.features, axis=0))
@@ -63,8 +63,8 @@ class ClassificationDataSet(Dataset):
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
-        self.flatten =nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(nn.Linear(in_features=13, out_features=20),nn.Sigmoid(),nn.Linear(20,1))
+        #self.flatten =nn.Flatten()
+        self.linear_relu_stack = nn.Sequential(nn.Linear(in_features=15, out_features=500),nn.Sigmoid(),nn.Linear(500,1))
 
     def forward (self, x):
         logits = self.linear_relu_stack(x)
@@ -94,7 +94,7 @@ class NeuralNetwork(nn.Module):
 walmart_data_train = ClassificationDataSet('walmart_cleaned.csv','walmart_target.csv',train=True)
 walmart_data_test = ClassificationDataSet('walmart_cleaned.csv','walmart_target.csv',train=False)
 
-train_loader = torch.utils.data.DataLoader(walmart_data_train,batch_size=64,shuffle=True)
+train_loader = torch.utils.data.DataLoader(walmart_data_train,batch_size=5000,shuffle=True)
 test_loader = torch.utils.data.DataLoader(walmart_data_test,batch_size=1)
 
 train_features, train_labels = next(iter(train_loader))
@@ -103,7 +103,7 @@ wm_model = NeuralNetwork()
 
 loss_fn = nn.MSELoss()
 optimizer = torch.optim.SGD(wm_model.parameters(), lr=0.05)
-wm_model.perform_training(train_loader, loss_fn, optimizer, epochs=200)
+wm_model.perform_training(train_loader, loss_fn, optimizer, epochs=10)
 inputs = []
 predictions = []
 labels = []
