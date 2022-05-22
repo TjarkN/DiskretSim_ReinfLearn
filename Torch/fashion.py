@@ -1,8 +1,9 @@
 import torch
-from torch import nn
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
+from torchvision import datasets
+from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
-
+from torch import nn
 import numpy as np
 import pandas as pd
 
@@ -63,10 +64,16 @@ class ClassificationDataSet(Dataset):
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
-        #self.flatten =nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(nn.Linear(in_features=15, out_features=30),nn.Linear(30,30),nn.Linear(30,1))
+        self.flatten =nn.Flatten()
+        self.linear_relu_stack = nn.Sequential(
+            nn.Linear(28*28,512),
+            nn.ReLU(),
+            nn.Linear(512,512),
+            nn.ReLU(),
+            nn.Linear(512,10))
 
     def forward (self, x):
+        x = self.flatten(x)
         logits = self.linear_relu_stack(x)
         return logits
 
@@ -91,26 +98,43 @@ class NeuralNetwork(nn.Module):
         return loss_history
 
 
-walmart_data_train = ClassificationDataSet('walmart_cleaned.csv','walmart_target.csv',train=True)
-walmart_data_test = ClassificationDataSet('walmart_cleaned.csv','walmart_target.csv',train=False)
+training_data = datasets.FashionMNIST(
+    root="data",
+    train = True,
+    download = True,
+    transform = ToTensor()
+)
 
-train_loader = torch.utils.data.DataLoader(walmart_data_train,batch_size=5000,shuffle=True)
-test_loader = torch.utils.data.DataLoader(walmart_data_test,batch_size=1)
+test_data = datasets.FashionMNIST(
+    root="data",
+    train=False,
+    download = True,
+    transform = ToTensor()
+)
+
+train_loader = torch.utils.data.DataLoader(training_data,batch_size=256,shuffle=True)
+test_loader = torch.utils.data.DataLoader(test_data,batch_size=1)
 
 train_features, train_labels = next(iter(train_loader))
 
-wm_model = NeuralNetwork()
+fashion_model = NeuralNetwork()
 
-loss_fn = nn.MSELoss()
-optimizer = torch.optim.SGD(wm_model.parameters(), lr=0.05)
-wm_model.perform_training(train_loader, loss_fn, optimizer, epochs=10)
-inputs = []
+loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(fashion_model.parameters(), lr=0.0001)
+testmodel = fashion_model.perform_training(train_loader, loss_fn, optimizer, epochs=10)
+plt.plot(testmodel)
+"""inputs = []
 predictions = []
 labels = []
 for X, y in test_loader:
     labels.append(y.cpu().detach().numpy().squeeze())
-    y_hat = wm_model(X)
+    y_hat = fashion_model(X)
 predictions.append(y_hat.cpu().detach().numpy().squeeze())
 plt.plot(np.arange(len(labels)), labels)
-plt.plot(np.arange(len(predictions)), predictions)
+plt.plot(np.arange(len(predictions)), predictions)"""
+
 plt.show()
+"""plt.imshow(training_data.data[69],cmap='jet')
+print(training_data.data[69])
+plt.show()"""
+
