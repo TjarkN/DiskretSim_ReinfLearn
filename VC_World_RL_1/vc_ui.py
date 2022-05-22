@@ -2,6 +2,7 @@
 import pgzrun
 
 from agents.q_learning_agent import QLearningAgent
+from agents.q_learning_agent import DeepQLearningAgent
 from vc_environment import Environment
 import time
 
@@ -9,8 +10,9 @@ import time
 env = Environment(size=(3, 2), seed_value=None)
 
 #load q_table
-agent = QLearningAgent(env.problem, file="agents/q_table.npy")
-agent.load_q_table()
+agent = DeepQLearningAgent(env.problem, )#q_table_file="q_table.npy"
+agent.q_table.load_model("2022_05_21.pth")
+#agent.load_q_table()
 
 size = env.size
 building = env.problem.building

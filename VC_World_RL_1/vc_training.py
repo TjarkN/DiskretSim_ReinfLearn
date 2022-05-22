@@ -1,14 +1,20 @@
 from vc_environment import Environment
 from agents.q_learning_agent import QLearningAgent
+from agents.q_learning_agent import DeepQLearningAgent
 import matplotlib.pyplot as plt
 import numpy as np
+import time
+import torch
+from torch import nn
 
+t = time.time()
 # set max number of iterations
 max_iterations = 2000
 size = (3, 2)
 it = 0
 env = Environment(size)
-agent = QLearningAgent(env.problem, max_N_exploration=10, file="agents/q_table.npy")
+agent = DeepQLearningAgent(env.problem, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
+                           Optimizer=torch.optim.Adam, loss_fn=nn.MSELoss())
 performance = []
 q_table = None
 # training
@@ -29,6 +35,8 @@ while it < max_iterations:
 #    env.problem.act(action)
 
 # plot results
+run_time = time.time()-t
+print(run_time)
 print(env.problem.energy_spend)
 x = np.array(performance)
 N = 100
@@ -38,4 +46,5 @@ plt.plot(moving_average)
 plt.show()
 
 # save q_table
-agent.save_q_table()
+agent.q_table.save_model("2022_05_21.pth")
+#agent.save_q_table()

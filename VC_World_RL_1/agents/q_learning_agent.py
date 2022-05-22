@@ -27,7 +27,7 @@ class QLearningAgent(Agent):
         self.max_N_exploration = max_N_exploration
         self.R_Max = R_Max
         self.file = q_table_file
-        self.experience_replay = ExperienceReplay()
+        #self.experience_replay = ExperienceReplay()
 
     def act(self):
         # perception
@@ -91,19 +91,144 @@ class QLearningAgent(Agent):
         np.save(self.file, self.q_table)
 
     def load_q_table(self):
-        self.q_table = np.load(self.file)
+        self.q_table = np.load(self.file) #, allow_pickle=True
 
     def alpha(self, s, a):
         # learnrate alpha decreases with N_sa for convergence
         alpha = self.N_sa[s][a]**(-1/2)
         return alpha
 
-    def remember(self):
-        self.experience_replay.remember(self.e)
-
 
 
 class ExperienceReplay(Dataset):
+    def __init__(self, model, max_memory=100, gamma=0.99, transform=None, target_transform=None):
+        self.model = model
+        self.memory = []
+        self.max_memory = max_memory
+        self.gamma = gamma
+        self.transform = transform
+        self.target_transform = target_transform
+
+    def remember(self, states, game_over):
+        # Save a state to memory
+        self.memory.append([states, game_over])
+        # We don't want to store infinite memories, so if we have too many, we just delete the oldest one
+        if len(self.memory) > self.max_memory:
+            del self.memory[0]
+
+    def update_model(self, model):
+        self.model = model
+
+    def __len__(self):
+        return len(self.memory)
+
+    def __getitem__(self, idx):
+        s, a, r, s_new = self.memory[idx][0]
+        goal_state = self.memory[idx][1]
+        features = np.array(s)
+        # init labels with old prediction (and later overwrite action a)
+        label = self.model[s]
+        if goal_state:
+            label[a] = r
+        else:
+            label[a] = r + self.gamma * max(self.model[s_new])
+
+        if self.transform:
+            features = self.transform(features)
+        if self.target_transform:
+            label = self.target_transform(label)
+
+        device = "cpu"
+        if torch.cuda.is_available():
+            device = "cuda"
+        features = torch.from_numpy(features).float().to(device)
+        label = torch.from_numpy(label).float().to(device)
+
+        return features, label
+
+
+class DeepQLearningAgent(QLearningAgent):
+
+    def __init__(self, problem, q_table=None, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
+                 Optimizer=torch.optim.Adam, loss_fn=nn.MSELoss()):
+        super().__init__(problem, q_table=q_table, N_sa=N_sa, gamma=gamma, max_N_exploration=max_N_exploration,
+                         R_Max=R_Max)
+
+        if q_table is None:
+            all_states = np.array(self.states)
+            min_values = np.amin(all_states, axis=0)
+            max_values = np.maximum(np.ones_like(self.states[0]), np.amax(all_states, axis=0))
+            transform = lambda x: (x - min_values) / (max_values - min_values)
+            self.q_table = self.create_model(Optimizer, loss_fn, transform)
+
+        self.batch_size = batch_size
+        self.experience_replay = ExperienceReplay(self.q_table, transform=transform)
+        self.loss_history = []
+
+
+    #def __call__(self, *args, **kwargs):
+
+    def create_model(self, Optimizer, loss_fn, transform):
+        return DeepQTable(len(self.states[0]), len(self.actions), Optimizer, loss_fn, transform)
+
+    def update_q_values(self, s, a, r, s_new, is_goal_state):
+        self.experience_replay.remember((s, a, r, s_new), is_goal_state)
+        train_loader = DataLoader(self.experience_replay, batch_size=self.batch_size, shuffle=True)
+        self.loss_history += self.q_table.perform_training(train_loader)
+
+
+
+class DeepQTable(nn.Module):
+    def __init__(self, number_of_states, number_of_actions, Optimizer, loss_fn, transform):
+        super(DeepQTable, self).__init__()
+        self.model = nn.Sequential(
+            nn.Linear(number_of_states, 40),
+            nn.ReLU(),
+            nn.Linear(40, 20),
+            nn.ReLU(),
+            nn.Linear(20, number_of_actions), )
+        self.device = "cpu"
+        if torch.cuda.is_available():
+            self.device = "cuda"
+        self.model.to(self.device)
+        self.optimizer = Optimizer(self.model.parameters())
+        self.loss_fn = loss_fn
+        self.transform = transform
+
+    def __getitem__(self, state):
+        state = self.transform(np.array(state))
+        state = torch.tensor(state).float().to(self.device)
+        return self.model(state).cpu().detach().numpy()
+
+    def __setitem__(self, state, value):
+        # ignoring setting to values
+        pass
+
+    def forward(self, x):
+        return self.model(x)
+
+    def perform_training(self, dataloader):
+        loss_history = []
+        (X, y) = next(iter(dataloader))
+        # Compute prediction and loss
+        pred = self(X)
+        loss = self.loss_fn(pred, y)
+        # Backpropagation
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+        loss_history.append(loss)
+        return loss_history
+
+    def save_model(self, file):
+        torch.save(self.model.state_dict(), file)
+
+    def load_model(self, file):
+        self.model.load_state_dict(torch.load(file))
+
+
+
+"""class ExperienceReplay(Dataset):
 
     def __init__(self):
         self.data = []
@@ -115,6 +240,6 @@ class ExperienceReplay(Dataset):
         return self.data.__getitem__(item)
 
     def remember(self, e):
-        self.data.append(e)
+        self.data.append(e)"""
 
 
