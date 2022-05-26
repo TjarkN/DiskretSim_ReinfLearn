@@ -2,6 +2,7 @@ from agents.agent import Agent
 import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
+import copy
 import matplotlib.pyplot as plt
 
 import numpy as np
@@ -175,6 +176,20 @@ class DeepQLearningAgent(QLearningAgent):
         self.experience_replay.remember((s, a, r, s_new), is_goal_state)
         train_loader = DataLoader(self.experience_replay, batch_size=self.batch_size, shuffle=True)
         self.loss_history += self.q_table.perform_training(train_loader)
+
+
+class DoubleDeepQLearningAgent(DeepQLearningAgent):
+
+    def __init__(self, problem, q_table=None, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
+                 Optimizer=torch.optim.Adam, loss_fn=nn.MSELoss()):
+
+        super().__init__(problem= problem, q_table=q_table, N_sa=N_sa, gamma=gamma, max_N_exploration=max_N_exploration,
+                         R_Max=R_Max, batch_size=batch_size, Optimizer=Optimizer, loss_fn=loss_fn)
+        self.target_network = None
+
+    def set_target_network(self):
+        self.target_network = copy.deepcopy(self.q_table)
+        self.experience_replay.update_model(self.target_network)
 
 
 

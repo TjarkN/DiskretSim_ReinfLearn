@@ -1,5 +1,5 @@
 from vc_environment import Environment
-from agents.q_learning_agent import QLearningAgent
+from agents.q_learning_agent import QLearningAgent, DoubleDeepQLearningAgent
 from agents.q_learning_agent import DeepQLearningAgent
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,14 +13,20 @@ max_iterations = 2000
 size = (3, 2)
 it = 0
 env = Environment(size)
-agent = DeepQLearningAgent(env.problem, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
+agent = DoubleDeepQLearningAgent(env.problem, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
                            Optimizer=torch.optim.Adam, loss_fn=nn.MSELoss())
 performance = []
 q_table = None
+
+target_update = 100
+
 # training
 while it < max_iterations:
     complexity = max(1, env.problem.eval(env.problem))
     q_table, N_sa = agent.train()
+    if it%target_update == 0:
+        agent.set_target_network()
+
     energy_spent = env.problem.energy_spend
     performance.append(energy_spent/complexity)
     print(it, performance[it])
@@ -46,5 +52,5 @@ plt.plot(moving_average)
 plt.show()
 
 # save q_table
-agent.q_table.save_model("2022_05_21.pth")
+agent.q_table.save_model("2022_05_22.pth")
 #agent.save_q_table()
