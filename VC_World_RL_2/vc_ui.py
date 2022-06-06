@@ -1,18 +1,25 @@
 #pip install pgzero
 import pgzrun
 
-from agents.q_learning_agent import QLearningAgent, DoubleDeepQLearningAgent
-from agents.q_learning_agent import DeepQLearningAgent
+from agents.deep_q_learning_agent import DeepQLearningAgent, DoubleDeepQLearningAgent, DeepDuelingQTable
+from agents.reinforce_agent import ReinforceAgent
+from agents.q_learning_agent import QLearningAgent
+#from agents.simple_reflex_agent import SimpleReflexAgent
+#from agents.value_iteration_agent import ValueIterationAgent
 from vc_environment import Environment
 import time
 
 
-env = Environment(size=(3, 2), seed_value=None)
+env = Environment(size=(2, 2), seed_value=None)
 
 #load q_table
-agent = DoubleDeepQLearningAgent(env.problem)#q_table_file="q_table.npy"
-agent.q_table.load_model("2022_05_22.pth")
-#agents.load_q_table()
+#agents = DoubleDeepQLearningAgent(env.problem, file="agents/double_deep_q_table.pth", ModelClass=DeepDuelingQTable)
+agent = ReinforceAgent(env.problem, file="agents/policy.pth")
+#agents = QLearningAgent(env.problem, file="agents/q_table.npy")
+agent.load()
+#agents = SimpleReflexAgent(env.problem)
+#agents = ValueIterationAgent(env.problem)
+
 
 size = env.size
 building = env.problem.building

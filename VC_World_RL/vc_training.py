@@ -43,12 +43,12 @@ agent.save_q_table("agents/q_table.npy")
 
 
 
-"""initialize Environment and agent
+"""initialize Environment and agents
 def initialize_env(x,y):
 
 
     env = Environment(size=(x, y), seed_value=None)
-    agent = QLearningAgent(env.problem)
+    agents = QLearningAgent(env.problem)
     states = env.problem.get_all_states()
     actions = env.problem.get_all_actions()
 

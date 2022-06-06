@@ -1,32 +1,26 @@
 from vc_environment import Environment
-from agents.q_learning_agent import QLearningAgent, DoubleDeepQLearningAgent
-from agents.q_learning_agent import DeepQLearningAgent
+from agents.q_learning_agent import QLearningAgent
+from agents.deep_q_learning_agent import DeepQLearningAgent, DeepQTable, DeepDuelingQTable, DoubleDeepQLearningAgent
+from agents.reinforce_agent import ReinforceAgent
+from agents.q_actor_critic import QActorCriticAgent
 import matplotlib.pyplot as plt
 import numpy as np
-import time
-import torch
-from torch import nn
 
-t = time.time()
 # set max number of iterations
-max_iterations = 2000
-size = (3, 2)
+max_iterations = 5000
+size = (2, 2)
 it = 0
 env = Environment(size)
-agent = DoubleDeepQLearningAgent(env.problem, N_sa=None, gamma=0.99, max_N_exploration=100, R_Max=100, batch_size=10,
-                           Optimizer=torch.optim.Adam, loss_fn=nn.MSELoss())
+#agents = QLearningAgent(env.problem, max_N_exploration=10, q_table_file="agents/q_table.npy")
+#agents = DoubleDeepQLearningAgent(env.problem, max_N_exploration=10, q_table_file="agents/double_deep_q_table.pth",
+#                           ModelClass=DeepDuelingQTable)
+#agent = ReinforceAgent(env.problem, file="agents/policy.pth")
+agent = QActorCriticAgent(env.problem, file="agents/q_actor.npy")
 performance = []
-q_table = None
-
-target_update = 100
-
 # training
 while it < max_iterations:
     complexity = max(1, env.problem.eval(env.problem))
-    q_table, N_sa = agent.train()
-    if it%target_update == 0:
-        agent.set_target_network()
-
+    agent.train()
     energy_spent = env.problem.energy_spend
     performance.append(energy_spent/complexity)
     print(it, performance[it])
@@ -41,8 +35,6 @@ while it < max_iterations:
 #    env.problem.act(action)
 
 # plot results
-run_time = time.time()-t
-print(run_time)
 print(env.problem.energy_spend)
 x = np.array(performance)
 N = 100
@@ -51,6 +43,5 @@ plt.plot(performance)
 plt.plot(moving_average)
 plt.show()
 
-# save q_table
-agent.q_table.save_model("2022_05_22.pth")
-#agents.save_q_table()
+# save agents
+agent.save()

@@ -39,7 +39,7 @@ def draw():
         screen.draw.line((x * width_room, 0), (x * width_room, HEIGHT), "black")
     for y in range(size[1]):
         screen.draw.line((0, y * height_room), (WIDTH, y * height_room),"black")
-    # draw agent
+    # draw agents
     vc_gui.x = vc.position[0] * width_room + vc_gui.width / 2
     vc_gui.y = vc.position[1] * height_room + vc_gui.height / 2
     vc_gui.draw()
