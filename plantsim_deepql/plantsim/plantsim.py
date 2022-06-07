@@ -6,10 +6,10 @@ file LICENSE or https://opensource.org/licenses/MIT
 
 import win32com.client as win32
 
-from error_code import ErrorCode
-from attribute_explorer import AttributeExplorer
-from plant_simulation_connection import PlantSimulationConnection
-from table import Table
+from .error_code import ErrorCode
+from .attribute_explorer import AttributeExplorer
+from .plant_simulation_connection import PlantSimulationConnection
+from .table import Table
 
 
 class Plantsim:

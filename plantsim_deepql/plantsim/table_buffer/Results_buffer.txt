@@ -1,0 +1,2 @@
+﻿	SimTime	Station 1	Station 2	Station 3
+	5039.77	167	167	166

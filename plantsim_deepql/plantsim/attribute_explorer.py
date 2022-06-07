@@ -4,7 +4,7 @@ Distributed under the MIT license, see the accompanying
 file LICENSE or https://opensource.org/licenses/MIT
 """
 
-from table import Table
+from .table import Table
 
 
 class AttributeExplorer:
